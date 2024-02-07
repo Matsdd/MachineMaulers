@@ -67,9 +67,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 0
@@ -4332,6 +4329,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3493108025329439727, guid: b9919d0dab5df8c458be3232a0fd98f7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3916f98f9271e244f8985c0eeb83fbf3, type: 3}
     - target: {fileID: 9207591170494772449, guid: b9919d0dab5df8c458be3232a0fd98f7, type: 3}
       propertyPath: m_Name
       value: Barricat
@@ -4348,6 +4349,6 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1627439025}
   - {fileID: 2115629812}
-  - {fileID: 6095827794275943062}
   - {fileID: 846569584}
+  - {fileID: 6095827794275943062}
   - {fileID: 1252886016}
