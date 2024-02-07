@@ -15,11 +15,11 @@ public class Cat : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
-        Debug.Log($"Barricat took {damageAmount} damage. Current Health: {currentHealth}");
+        Debug.Log($"Cat took {damageAmount} damage. Current Health: {currentHealth}");
 
         if (currentHealth <= 0)
         {
-            Debug.Log("Barricat destroyed!");
+            Debug.Log("Cat destroyed!");
             gameObject.SetActive(false);
         }
     }
