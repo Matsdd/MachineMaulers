@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Catfood : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int catfoodValue = 10; // Adjust the amount of Catfood this prefab provides
+
+    private void OnMouseDown()
     {
-        
+        CollectCatfood();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void CollectCatfood()
     {
-        
+        CatfoodBank catfoodBank = FindObjectOfType<CatfoodBank>();
+        if (catfoodBank != null)
+        {
+            catfoodBank.AddCatfood(catfoodValue);
+            Destroy(gameObject); // Remove the Catfood prefab after collecting
+        }
     }
 }
