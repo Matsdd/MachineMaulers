@@ -6,6 +6,7 @@ public class ProduceCatfood : MonoBehaviour
 {
     public GameObject catfoodPrefab;
     public float productionInterval = 5f; // Adjust the interval between Catfood production
+    public float spawnRadius = 2f; // Adjust the radius for random spawn
 
     private float nextProductionTime;
 
@@ -25,10 +26,13 @@ public class ProduceCatfood : MonoBehaviour
 
     void ProduceCatfoodPrefab()
     {
-        // Specify the rotation you want for the spawned Catfood
-        Quaternion spawnRotation = Quaternion.Euler(45f, 0f, 0f); // Rotate 90 degrees around the Y-axis
+        // Calculate a random angle in radians
+        float randomAngle = Random.Range(45f, 45f) * Mathf.Deg2Rad;
 
-        // Spawn the Catfood prefab at the Cat's position with the specified rotation
-        Instantiate(catfoodPrefab, transform.position, spawnRotation);
+        // Calculate the spawn position based on the angle and radius
+        Vector3 spawnPosition = transform.position + new Vector3(Mathf.Cos(randomAngle), 0f, Mathf.Sin(randomAngle)) * spawnRadius;
+
+        // Spawn the Catfood prefab at the random position
+        Instantiate(catfoodPrefab, spawnPosition, Quaternion.identity);
     }
 }

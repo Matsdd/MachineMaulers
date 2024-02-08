@@ -1994,6 +1994,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   catfoodPrefab: {fileID: 6073490751176031438, guid: c90f66b6293a10244b27a90c922c17a3, type: 3}
   productionInterval: 5
+  spawnRadius: 0.3
 --- !u!1 &854009297
 GameObject:
   m_ObjectHideFlags: 0

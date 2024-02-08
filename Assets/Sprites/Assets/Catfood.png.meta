@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Catfood_0: 8309285872223126100
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
