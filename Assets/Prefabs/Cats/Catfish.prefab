@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9207591170494772449
+--- !u!1 &2594929353962266473
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3101986895295827616}
-  - component: {fileID: 3493108025329439727}
-  - component: {fileID: 3157681260833500916}
-  - component: {fileID: 711827257165942118}
-  - component: {fileID: 5551026061119027025}
+  - component: {fileID: 3034257957888729453}
+  - component: {fileID: 7219420815910543299}
+  - component: {fileID: 1498526419043830123}
+  - component: {fileID: 5598673028830491526}
+  - component: {fileID: 2535366152314848522}
+  - component: {fileID: 8822889415778493350}
   m_Layer: 0
-  m_Name: Barricat
+  m_Name: Catfish
   m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3101986895295827616
+--- !u!4 &3034257957888729453
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9207591170494772449}
+  m_GameObject: {fileID: 2594929353962266473}
   serializedVersion: 2
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 1.2, z: 1.28}
@@ -35,13 +36,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
---- !u!212 &3493108025329439727
+--- !u!212 &7219420815910543299
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9207591170494772449}
+  m_GameObject: {fileID: 2594929353962266473}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3916f98f9271e244f8985c0eeb83fbf3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb9cc0e590e83d0478c86a8952022a7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,26 +88,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3157681260833500916
+--- !u!114 &1498526419043830123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9207591170494772449}
+  m_GameObject: {fileID: 2594929353962266473}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9c1c7ca64ae2f443aa26d1e5d4789e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
---- !u!65 &711827257165942118
+  maxHealth: 5
+--- !u!65 &5598673028830491526
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9207591170494772449}
+  m_GameObject: {fileID: 2594929353962266473}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -120,14 +121,14 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.5, z: 0.1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5551026061119027025
+  m_Center: {x: 0, y: -0.05, z: 0}
+--- !u!54 &2535366152314848522
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9207591170494772449}
+  m_GameObject: {fileID: 2594929353962266473}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -148,3 +149,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8822889415778493350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2594929353962266473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3c1da19ae5fd94c84060e6799e58c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  catfoodPrefab: {fileID: 6073490751176031438, guid: c90f66b6293a10244b27a90c922c17a3, type: 3}
+  productionInterval: 10
+  spawnRadius: 0.15
