@@ -49,7 +49,7 @@ public class Catfood : MonoBehaviour
 
     private void CollectCatfood()
     {
-        CatfoodBank catfoodBank = FindObjectOfType<CatfoodBank>();
+        CatfoodBank catfoodBank = Object.FindFirstObjectByType<CatfoodBank>();
         if (catfoodBank != null)
         {
             catfoodBank.AddCatfood(catfoodValue);
