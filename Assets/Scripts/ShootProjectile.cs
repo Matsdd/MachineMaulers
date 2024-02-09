@@ -4,15 +4,56 @@ using UnityEngine;
 
 public class ShootProjectile : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject laserPrefab;
+    public Transform firePoint;
+    public float fireRate = 0.5f;
+    public float maxShootDistance = 5f; // Adjust the maximum shooting distance
+    private float nextFireTime;
+
     void Start()
     {
-        
+        // Start firing lasers automatically when the cat is instantiated
+        nextFireTime = Time.time + 1f / fireRate;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // Check if it's time to fire again
+        if (Time.time >= nextFireTime)
+        {
+            Shoot();
+            nextFireTime = Time.time + 1f / fireRate;
+        }
+    }
+
+    void Shoot()
+    {
+        // Check if there is a robot in line of sight
+        if (IsRobotInLineOfSight())
+        {
+            Instantiate(laserPrefab, firePoint.position, firePoint.rotation);
+        }
+    }
+
+    bool IsRobotInLineOfSight()
+    {
+        RaycastHit hit;
+
+        // Debug log to print the ray direction
+        Debug.DrawRay(firePoint.position, firePoint.right * maxShootDistance, Color.red, 2.0f);
+
+        // Perform a raycast from the firePoint position forward
+        if (Physics.Raycast(firePoint.position, firePoint.right, out hit, maxShootDistance))
+        {
+            // Check if the hit object has the tag "Robot"
+            if (hit.collider.CompareTag("Robot"))
+            {
+                // Robot is in line of sight
+                return true;
+            }
+        }
+
+        // No robot in line of sight
+        return false;
     }
 }

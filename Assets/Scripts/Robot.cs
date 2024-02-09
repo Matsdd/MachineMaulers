@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWalk : MonoBehaviour
+public class Robot : MonoBehaviour
 {
     public float speed = 1f; // Adjust the speed of the enemy
     public float leftBound = -5f; // Adjust the point where the enemy should stop moving
@@ -12,6 +12,15 @@ public class EnemyWalk : MonoBehaviour
 
     private float nextDamageTime;
     private Cat currentTargetCat; // Track the current target cat for this enemy instance
+
+    public float maxHealth = 5f; // Adjust the maximum health of the enemy
+    private float currentHealth;
+
+    void Start()
+    {
+        // Initialize the enemy's health
+        currentHealth = maxHealth;
+    }
 
     void Update()
     {
@@ -24,9 +33,6 @@ public class EnemyWalk : MonoBehaviour
             EndReached();
         }
 
-        // Check if it has killed the current target cat
-        
-
         // Continuous damage every second
         if (Time.time >= nextDamageTime)
         {
@@ -36,6 +42,12 @@ public class EnemyWalk : MonoBehaviour
             }
 
             nextDamageTime = Time.time + damageInterval;
+        }
+
+        // Check if the enemy has run out of health
+        if (currentHealth <= 0)
+        {
+            EnemyDefeated();
         }
     }
 
@@ -65,6 +77,31 @@ public class EnemyWalk : MonoBehaviour
         {
             currentTargetCat = null; // Reset the target cat
             speed = 0.5f; // Resume normal speed
+        }
+    }
+
+    // Function to handle when the enemy has run out of health
+    void EnemyDefeated()
+    {
+        // Perform actions when the enemy is defeated
+        Debug.Log("Enemy defeated!");
+        gameObject.SetActive(false); // Disable the enemy GameObject or perform other actions as needed
+    }
+
+    // Method to make the enemy take damage
+    public void TakeDamage(float damageAmount)
+    {
+        // Reduce health by the damage amount
+        currentHealth -= damageAmount;
+
+        // Check if the enemy has run out of health
+        if (currentHealth <= 0)
+        {
+            EnemyDefeated();
+        }
+        else
+        {
+            Debug.Log($"Enemy took {damageAmount} damage. Current Health: {currentHealth}");
         }
     }
 
