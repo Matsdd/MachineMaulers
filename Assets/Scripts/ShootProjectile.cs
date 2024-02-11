@@ -32,6 +32,7 @@ public class ShootProjectile : MonoBehaviour
         if (IsRobotInLineOfSight())
         {
             Instantiate(laserPrefab, firePoint.position, firePoint.rotation);
+
         }
     }
 
@@ -50,6 +51,18 @@ public class ShootProjectile : MonoBehaviour
             {
                 // Robot is in line of sight
                 return true;
+            }
+            else
+            {
+                // If it's not a robot, continue the raycast until maxShootDistance
+                RaycastHit secondHit;
+                if (Physics.Raycast(hit.point + firePoint.right * 0.01f, firePoint.right, out secondHit, maxShootDistance))
+                {
+                    if (secondHit.collider.CompareTag("Robot"))
+                    {
+                        return true;
+                    }
+                }
             }
         }
 

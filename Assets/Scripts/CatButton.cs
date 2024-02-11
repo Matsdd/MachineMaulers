@@ -16,6 +16,7 @@ public class CatButton : MonoBehaviour
 
     void SelectCat()
     {
+        Debug.Log("Cat selected.");
         catEquipManager.SelectCat(catIndex);
     }
 }
