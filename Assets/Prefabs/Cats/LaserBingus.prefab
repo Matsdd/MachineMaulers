@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 90274288289466595}
   - component: {fileID: 2644725442052682128}
   - component: {fileID: 8144557085917419031}
+  - component: {fileID: 8685020570650960582}
   - component: {fileID: 3272264034019929729}
   - component: {fileID: 8429389966976371237}
-  - component: {fileID: 8685020570650960582}
   m_Layer: 0
   m_Name: LaserBingus
   m_TagString: Cat
@@ -102,6 +102,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
+--- !u!114 &8685020570650960582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2667430444095264856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6f953ac2615f040944a2aea948b922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserPrefab: {fileID: 6918478894720387616, guid: cff366221a6e78a4e940e39a7b270300, type: 3}
+  firePoint: {fileID: 2188927528538045093}
+  fireRate: 1.5
+  maxShootDistance: 5
 --- !u!65 &3272264034019929729
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -150,22 +166,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8685020570650960582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2667430444095264856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6f953ac2615f040944a2aea948b922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  laserPrefab: {fileID: 6918478894720387616, guid: cff366221a6e78a4e940e39a7b270300, type: 3}
-  firePoint: {fileID: 2188927528538045093}
-  fireRate: 1.5
-  maxShootDistance: 5
 --- !u!1 &3595574528874770560
 GameObject:
   m_ObjectHideFlags: 0
