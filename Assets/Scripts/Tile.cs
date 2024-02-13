@@ -21,8 +21,6 @@ public class Tile : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("Tile Clicked!");
-
         // Check if the tile is already occupied
         if (IsOccupied())
         {
@@ -31,7 +29,7 @@ public class Tile : MonoBehaviour
         }
 
         // Check if GameManager has an equipped Cat prefab
-        if (gameManager.HasEquippedCat == true)
+        if (gameManager.HasEquippedCat)
         {
             // Inform the GameManager that the tile is clicked
             gameManager.OnTileClick(this);
@@ -49,7 +47,6 @@ public class Tile : MonoBehaviour
     // Check if the tile is occupied
     bool IsOccupied()
     {
-        Debug.Log("Tile IsOccupied: " + occupied);
         return occupied;
     }
 
@@ -57,13 +54,13 @@ public class Tile : MonoBehaviour
     public void SetOccupied(bool status)
     {
         occupied = status;
-        Debug.Log("Tile SetOccupied: " + occupied);
     }
 
     // Check if the tile is empty
     public bool IsEmpty()
     {
-        Debug.Log("Tile IsEmpty: " + !occupied);
         return !occupied;
     }
+
+    // Other tile-related methods...
 }
