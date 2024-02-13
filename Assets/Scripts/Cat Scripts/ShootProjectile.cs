@@ -31,7 +31,9 @@ public class ShootProjectile : MonoBehaviour
         // Check if there is a robot in line of sight
         if (IsRobotInLineOfSight())
         {
-            Instantiate(laserPrefab, firePoint.position, firePoint.rotation);
+            Quaternion laserRotation = Quaternion.Euler(0f, 0f, 0f);
+
+            Instantiate(laserPrefab, firePoint.position, laserRotation);
 
         }
     }
@@ -43,26 +45,29 @@ public class ShootProjectile : MonoBehaviour
         // Debug log to print the ray direction
         Debug.DrawRay(firePoint.position, firePoint.right * maxShootDistance, Color.red, 2.0f);
 
-        // Perform a raycast from the firePoint position forward
-        if (Physics.Raycast(firePoint.position, firePoint.right, out hit, maxShootDistance))
+        float currentDistance = 0f;
+
+        while (currentDistance < maxShootDistance)
         {
-            // Check if the hit object has the tag "Robot"
-            if (hit.collider.CompareTag("Robot"))
+            // Perform a raycast from the firePoint position forward
+            if (Physics.Raycast(firePoint.position + firePoint.right * currentDistance, firePoint.right, out hit, maxShootDistance - currentDistance))
             {
-                // Robot is in line of sight
-                return true;
+                // Check if the hit object has the tag "Robot"
+                if (hit.collider.CompareTag("Robot"))
+                {
+                    // Robot is in line of sight
+                    return true;
+                }
+                else
+                {
+                    // If it's not a robot, continue the raycast
+                    currentDistance += hit.distance + 0.01f; // Offset to prevent hitting the same object again
+                }
             }
             else
             {
-                // If it's not a robot, continue the raycast until maxShootDistance
-                RaycastHit secondHit;
-                if (Physics.Raycast(hit.point + firePoint.right * 0.01f, firePoint.right, out secondHit, maxShootDistance))
-                {
-                    if (secondHit.collider.CompareTag("Robot"))
-                    {
-                        return true;
-                    }
-                }
+                // No more hits, exit the loop
+                break;
             }
         }
 

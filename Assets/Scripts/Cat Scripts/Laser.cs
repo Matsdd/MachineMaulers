@@ -15,7 +15,7 @@ public class Laser : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.right * speed * Time.deltaTime);
+        transform.position += Vector3.right * speed * Time.deltaTime;
     }
 
     void OnTriggerEnter(Collider other)
