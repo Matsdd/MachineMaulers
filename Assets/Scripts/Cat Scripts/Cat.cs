@@ -22,19 +22,16 @@ public class Cat : MonoBehaviour
     // Call this method when the cat dies
     public void NotifyTileOnDeath()
     {
-         Debug.Log("Yup");
          occupyingTile.SetOccupied(false);
     }
 
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
-        Debug.Log($"Cat took {damageAmount} damage. Current Health: {currentHealth}");
 
         if (currentHealth <= 0)
         {
             NotifyTileOnDeath();
-            Debug.Log("Cat destroyed!");
             gameObject.SetActive(false);
         }
     }

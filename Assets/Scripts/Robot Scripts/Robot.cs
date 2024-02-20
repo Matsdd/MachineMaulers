@@ -56,8 +56,6 @@ public class Robot : MonoBehaviour
         // Check if the encountered object has the "Cat" tag
         if (other.CompareTag("Cat"))
         {
-            Debug.Log("Collided with Cat");
-
             // Stop the enemy's movement
             speed = 0f;
 
@@ -84,7 +82,6 @@ public class Robot : MonoBehaviour
     void EnemyDefeated()
     {
         // Perform actions when the enemy is defeated
-        Debug.Log("Enemy defeated!");
         gameObject.SetActive(false); // Disable the enemy GameObject or perform other actions as needed
     }
 
@@ -98,10 +95,6 @@ public class Robot : MonoBehaviour
         if (currentHealth <= 0)
         {
             EnemyDefeated();
-        }
-        else
-        {
-            Debug.Log($"Enemy took {damageAmount} damage. Current Health: {currentHealth}");
         }
     }
 

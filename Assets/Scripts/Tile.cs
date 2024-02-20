@@ -36,11 +36,6 @@ public class Tile : MonoBehaviour
 
             // Mark the tile as occupied
             SetOccupied(true);
-            Debug.Log("Tile marked as occupied.");
-        }
-        else
-        {
-            Debug.LogWarning("No Cat prefab is equipped. Please select a Cat prefab first.");
         }
     }
 

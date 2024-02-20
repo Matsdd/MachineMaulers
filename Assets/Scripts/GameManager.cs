@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour
 
             // Instantiate the equipped cat prefab and place it on the tile
             GameObject catInstance = Instantiate(equippedCatPrefab, spawnPosition, spawnRotation);
-            Debug.Log("Cat placed.");
 
             // Set the tile as occupied
             tile.SetOccupied(true);
