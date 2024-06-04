@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CatfoodBank : MonoBehaviour
 {
-    private int catfoodAmount = 0;
+    private int catfoodAmount = 50;
     public Text catfoodText; // Reference to the UI Text component
 
     public int CatfoodAmount
